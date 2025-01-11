@@ -14,9 +14,15 @@ public class AuthController {
 
     private static final Logger logger = LoggerFactory.getLogger(AuthController.class);
 
-    @GetMapping("/test")
+    @GetMapping("/test_auth")
     public String test() {
         return "El endpoint de autenticación está funcionando correctamente";
+    }
+
+    @GetMapping("/test_public")
+    @RequestMapping(path = "/public/test", method = RequestMethod.GET)
+    public String testPublic() {
+        return "Este es un endpoint público que no requiere autenticación";
     }
 
     @GetMapping("/perfil")
