@@ -32,4 +32,9 @@ public class AlertController {
         alertService.deleteAlert(id);
         return ResponseEntity.ok().build();
     }
+
+    @GetMapping("/all")
+    public ResponseEntity<?> getAllAlerts() {
+        return ResponseEntity.ok(alertService.getAllAlerts());
+    }
 }

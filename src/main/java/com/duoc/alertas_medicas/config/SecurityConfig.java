@@ -54,6 +54,7 @@ public class SecurityConfig {
                 .requestMatchers(HttpMethod.POST, "/api/vital-signs/**").authenticated()
                 
                 // Endpoints de alertas
+                .requestMatchers(HttpMethod.GET, "/api/alerts/all").authenticated()
                 .requestMatchers(HttpMethod.GET, "/api/alerts/**").authenticated()
                 .requestMatchers(HttpMethod.PUT, "/api/alerts/**").authenticated()
                 

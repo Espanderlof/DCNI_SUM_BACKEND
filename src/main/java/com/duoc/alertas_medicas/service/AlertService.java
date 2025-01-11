@@ -48,4 +48,8 @@ public class AlertService {
             .orElseThrow(() -> new RuntimeException("Alerta no encontrada"));
         alertRepository.deleteById(id);
     }
+
+    public List<Alert> getAllAlerts() {
+        return alertRepository.findAll();
+    }
 }
