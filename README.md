@@ -25,6 +25,14 @@ docker run --name alertas_medicas_backend -p 8081:8081 alertas_medicas_backend
     docker pull espanderlof/alertas_medicas:latest
 3. levantar contenedor
     docker run -d --network host --name alertas_medicas_backend espanderlof/alertas_medicas:latest
-    Para Azure docker run -d -p 8081:8081 --name alertas_medicas_backend espanderlof/alertas_medicas:latest
+    Para Azure sudo docker run -d -p 8081:8081 --name alertas_medicas_backend espanderlof/alertas_medicas:latest
 4. verificar contenedores
+    docker ps
+
+# volver a iniciar un contenedor ya creado en docker MV azure
+1. traer todos los conenedores
+    docker ps -a
+2.  llamar al contenedor
+    sudo docker start alertas_medicas_backend
+3. revisar si se ejecuto el contenedor
     docker ps
