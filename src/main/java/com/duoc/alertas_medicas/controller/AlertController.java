@@ -1,5 +1,7 @@
 package com.duoc.alertas_medicas.controller;
 
+import com.duoc.alertas_medicas.dto.AlertDTO;
+import com.duoc.alertas_medicas.model.Alert;
 import com.duoc.alertas_medicas.service.AlertService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -36,5 +38,16 @@ public class AlertController {
     @GetMapping("/all")
     public ResponseEntity<?> getAllAlerts() {
         return ResponseEntity.ok(alertService.getAllAlerts());
+    }
+
+    @PostMapping
+    public ResponseEntity<?> createAlert(@RequestBody AlertDTO alertDTO) {
+        Alert alert = alertService.createAlert(
+            alertDTO.getPatientId(),
+            alertDTO.getAlertType(),
+            alertDTO.getDescription(),
+            alertDTO.getSeverity()
+        );
+        return ResponseEntity.ok(alert);
     }
 }

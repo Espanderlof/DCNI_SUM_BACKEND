@@ -42,7 +42,7 @@ public class VitalSignsService {
         vitalSigns.setTimestamp(LocalDateTime.now());
         
         // Verificar signos vitales y generar alertas si es necesario
-        checkVitalSigns(vitalSigns);
+        //checkVitalSigns(vitalSigns);
         
         return vitalSignsRepository.save(vitalSigns);
     }

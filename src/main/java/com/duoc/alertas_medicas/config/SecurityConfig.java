@@ -19,6 +19,7 @@ public class SecurityConfig {
             .csrf(csrf -> csrf.disable())
             .authorizeHttpRequests(authorize -> authorize
                 .requestMatchers(HttpMethod.POST, "/api/vital-signs").permitAll()
+                .requestMatchers(HttpMethod.POST, "/api/alerts").permitAll()
                 .requestMatchers("/api/auth/public/test").permitAll()
                 .anyRequest().authenticated()
             )
